@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Router, Link, useLocation } from "wouter";
 import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
-// import Calendar from './Calendar'; // TO BE FIXED
+
 /**
 * This code defines the react app
 *
