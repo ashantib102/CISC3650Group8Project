@@ -517,6 +517,14 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.schedule-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 70px;
+}
+
 .schedule-header {
   display: flex;
   background-color: #7e2626;

@@ -434,13 +434,55 @@ export function FoodTruckInfoPage() {
   );
 }
 
-// Schedule Page Component
+// 
+//  Schedule Page Component
+//
 export function SchedulePage() {
+    function getCurrentWeekDisplay() {
+    // Get current date
+    const today = new Date()
+    const dayOfWeek = today.getDay()
+    const monday = new Date(today)
+    
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+      const daysUntilNextMonday = dayOfWeek === 0 ? 1 : 8 - dayOfWeek
+       monday.setDate(today.getDate() + daysUntilNextMonday)
+    } else {
+      const diff = 1 - dayOfWeek
+      monday.setDate(today.getDate() + diff)
+    }
+
+    // Find Friday of current week
+    const friday = new Date(monday)
+    friday.setDate(monday.getDate() + 4)
+
+    // Format the month and dates
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ]
+    const month = monthNames[monday.getMonth()]
+
+    // Create the display string
+    return `${month}, ${monday.getDate()} - ${friday.getDate()}`
+  }
+  
   return (
     <div className="bc-bites-container">
       <Header />
       
       <div className="schedule-container">
+        <div className="schedule-title">{getCurrentWeekDisplay()}</div>
         <div className="schedule-table">
           <div className="schedule-header">
             <div className="day">Monday</div>
