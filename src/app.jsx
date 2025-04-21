@@ -443,20 +443,16 @@ export function SchedulePage() {
      const today = new Date()
     const currentDayOfWeek = today.getDay() // 0 is Sunday, 1 is Monday, etc.
 
-    // Find the reference Monday (this week's Monday)
     const thisMonday = new Date(today)
     const diff = currentDayOfWeek === 0 ? -6 : 1 - currentDayOfWeek
     thisMonday.setDate(today.getDate() + diff)
 
-    // Apply the week offset
     const targetMonday = new Date(thisMonday)
     targetMonday.setDate(thisMonday.getDate() + offset * 7)
 
-    // Find Friday of that week
     const targetFriday = new Date(targetMonday)
     targetFriday.setDate(targetMonday.getDate() + 4)
 
-    // Format the month and dates
     const monthNames = [
       "January",
       "February",
@@ -472,7 +468,7 @@ export function SchedulePage() {
       "December",
     ]
 
-    // Handle case where Monday and Friday might be in different months
+    // In case if Monday & Friday are in different dates
     if (targetMonday.getMonth() === targetFriday.getMonth()) {
       const month = monthNames[targetMonday.getMonth()]
       return `${month}, ${targetMonday.getDate()} - ${targetFriday.getDate()}`
@@ -485,14 +481,41 @@ export function SchedulePage() {
     
   const goToPreviousWeek = () => {
     setWeekOffset((prevOffset) => prevOffset - 1)
+    randomizeTruckSchedules()
   }
 
   const goToNextWeek = () => {
     setWeekOffset((prevOffset) => prevOffset + 1)
+    randomizeTruckSchedules()
   }
 
   const goToCurrentWeek = () => {
     setWeekOffset(0)
+  }
+    
+  // Simulation of viewing previous week food truck
+  const randomizeTruckSchedules = () => {
+
+    const dayColumns = document.querySelectorAll(".day-column")
+    if (!dayColumns.length) return
+
+    const truckSchedules = document.querySelectorAll(".truck-schedule")
+
+    const truckSchedulesArray = Array.from(truckSchedules)
+
+    truckSchedulesArray.forEach((truck) => {
+      truck.parentNode?.removeChild(truck)
+    })
+
+    for (let i = truckSchedulesArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[truckSchedulesArray[i], truckSchedulesArray[j]] = [truckSchedulesArray[j], truckSchedulesArray[i]]
+    }
+
+    truckSchedulesArray.forEach((truck, index) => {
+      const randomDayIndex = Math.floor(Math.random() * dayColumns.length)
+      dayColumns[randomDayIndex].appendChild(truck)
+    })
   }
   
   return (
@@ -507,7 +530,7 @@ export function SchedulePage() {
             Return to Current Week
           </button>
         )}
-        <button onClick={goToNextWeek}>Next Week →</button>
+        {weekOffset!=0 && (<button onClick={goToNextWeek}>Next Week →</button>)}
         </div>
         <div className="schedule-table">
           <div className="schedule-header">
