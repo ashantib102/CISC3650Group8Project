@@ -1,10 +1,13 @@
 import * as React from "react";
-/* ADD IMPORTS FROM TODO ON THE NEXT LINE */
 
 
 /**
 * The About function defines the component that makes up the About page
 * This component is attached to the /about path in router.jsx
+*
+*  TODO:
+*  - Include arrow buttons on the schedule page to view previous and future(?) schedule
+*  - (?) Make food truck info interactive by displaying dropdown options for menus?
 */
 
 export default function About() {

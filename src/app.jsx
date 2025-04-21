@@ -153,8 +153,8 @@ function InteractiveMap() {
                   position={truck.position}
                   icon={{
                     url: truck.icon,
-                    scaledSize: new window.google.maps.Size(45, 45), // Smaller size
-                    anchor: new window.google.maps.Point(22.5, 22.5) // Center point (half of width and height)
+                    scaledSize: new window.google.maps.Size(45, 45),
+                    anchor: new window.google.maps.Point(22.5, 22.5) 
                   }}
                   onClick={() => setSelectedTruck(truck)}
                 />

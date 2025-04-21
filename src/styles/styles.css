@@ -609,7 +609,7 @@ body {
 .contact-left a,
 .vendor-contact a {
   color: #fff; /* Match the white text color of paragraphs */
-  text-decoration: none; /* Remove underline for cleaner look */
+  text-decoration: underline; /* Remove underline for cleaner look */
   transition: color 0.2s ease; /* Smooth transition for hover effect */
 }
 
