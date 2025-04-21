@@ -691,7 +691,12 @@ export function AboutPage() {
       
       <div className="about-content">
         <h1>About BC Bites</h1>
-        <p>We are a group of Brooklyn College students who got frustrated with the messy and hard-to-find food truck schedules buried in endless emails. It was difficult to know when and where we could grab our favorite meals. Since there was no simple and dependable way to find this information, we decided to solve the problem ourselves. That's why we created this website. It's a straightforward and quick solution made by students just like us to keep everyone informed without the hassle of numerous emails. With this site, there will be no more guessing and no more missed lunches—just delicious food, always on time.</p>
+        <p>We are a group of Brooklyn College students who got frustrated with the messy and hard-to-find food truck schedules buried in endless emails. 
+          It was difficult to know when and where we could grab our favorite meals. Since there was no simple and dependable way to find this information, 
+          we decided to solve the problem ourselves. That's why we created this website. It's a straightforward and quick solution made by students just like 
+          us to keep everyone informed without the hassle of numerous emails.</p>
+        <p>With this site, there will be no more guessing and no more missed lunches—just 
+          delicious food, always on time.</p>
         <img className = "about-us-image" src = "https://cdn.glitch.global/517fcbda-27d5-4a6f-a83b-4e7f1dd0ed2e/11-CUNYverse-12-min.png?v=1745173825425"
           />
       </div>

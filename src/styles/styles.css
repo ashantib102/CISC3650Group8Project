@@ -732,26 +732,38 @@ body {
 
 /* About page */
 .about-content {
-  padding: 30px;
+  padding: 2rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
   text-align: left;
 }
 
 .about-content h1 {
-  font-size: 70px;
+  font-size: 5rem;
   margin-bottom: 30px;
   color: #f3bd48;
-  text-align: center;
+  text-align:center;
 }
 
 .about-content p {
-  text-align: center;
   font-family: "National Park", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem; /* Changed from 24px to 1.5rem for better responsiveness */
   line-height: 1.6;
-  margin-bottom: 25px;
+  margin-bottom: 1.563rem; /* Changed from 25px to 1.563rem */
   color: #fff;
+  max-width: 90%; /* Limit width to prevent text from extending too far */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem; /* Add some padding on the sides */
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+  .about-content p {
+    font-size: 1.125rem; /* Smaller font on mobile */
+    line-height: 1.5;
+    max-width: 95%;
+  }
 }
 
 .about-us-image {
