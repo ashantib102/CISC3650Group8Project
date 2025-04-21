@@ -286,7 +286,6 @@ export function HomePage() {
                   />
                   <div className="truck-info">
                     <div className="truck-name-container">
-                      <h3 className="star-icon">★</h3>
                       <h3 className="truck-name">Sammy's</h3>    
                     </div>
                     <h3 className="truck-name">Halal ($)</h3>

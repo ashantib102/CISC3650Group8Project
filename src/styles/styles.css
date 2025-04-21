@@ -310,24 +310,26 @@ body {
   max-height: 85px;
 }
 
-/*Jiannetto's Pizza*/
+/*Sammy's Halal*/
 .food-truck img[src*="download-removebg-preview.png"] {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 60px;
+  max-height: 50px;
 }
 
+/*BK Jerk Mobile*/
 .food-truck img[src*="images-removebg-preview.png"] {
   max-width: 60px;
-  max-height: 60px;
+  max-height: 800px;
 }
 
+/*San Mateo Coffee*/
 .food-truck img[src*="download-removebg-preview%20(4).png"] {
   max-width: 75px;
   max-height: 75px;
 }
 
 .food-truck img[src*="download-removebg-preview%20(5).png"] {
-  max-width: 60px;
+  max-width: 6px;
   max-height: 60px;
 }
 
