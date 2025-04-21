@@ -15,6 +15,7 @@ import "./styles/styles.css";
 import Seo from './components/seo.jsx';
 
 // Food truck location & data
+// Coordinates were obtained from google maps
 const foodTruckLocations = [
   {
     id: 1,
@@ -84,7 +85,7 @@ const options = {
   disableDefaultUI: false,
   zoomControl: true,
   mapTypeControl: false, // Disable map type control
-  streetViewControl: false, // For a prettier view
+  streetViewControl: false, 
   fullscreenControl: true,
   mapTypeId: 'satellite',
  restriction: {
@@ -128,7 +129,7 @@ function InteractiveMap() {
         >
           {/* Add markers for each food truck */}
           {mapLoaded && foodTruckLocations.map(truck => {
-            // Special case for the pizza truck to fix distortion (ha ha)
+            // Special case for the pizza truck to fix distortion 
             if (truck.id === 1) {
               return (
                 <Marker
