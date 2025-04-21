@@ -479,8 +479,8 @@ body {
 
 
 .food-trucks-test {
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -496,39 +496,47 @@ body {
 /* Custom icon sizes */
 /*Jiannetto's Pizza*/
 .food-trucks-test img[src*="Jiannetto_sPizzaLogo-removebg-preview.png"] {
-  max-width: 120px;
-  max-height: 120px;
+  max-width: 17rem;
+  max-height: 17rem;
 }
 
 /*Sammy's Halal*/
 .food-trucks-test img[src*="https://cdn.glitch.global/517fcbda-27d5-4a6f-a83b-4e7f1dd0ed2e/download-removebg-preview.png?v=1745168473732"] {
-  max-width: 60px;
-  max-height: 60px;
+  max-width: 8rem;
+  max-height: 8rem;
 }
 
 /*BK Jerk Mobile*/
 .food-trucks-test img[src*="images-removebg-preview.png"] {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 15rem;
+  max-height: 15rem;
 }
 
 /*San Mateo Coffee*/
 .food-trucks-test img[src*="download-removebg-preview%20(4).png"] {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 15rem;
+  max-height: 15rem;
 }
 
 /*Wafels and Dingles*/
 .food-trucks-test img[src*="download-removebg-preview%20(5).png"] {
-  max-width: 80px;
-  max-height: 80px;
+  max-width: 11rem;
+  max-height: 11rem;
 }
 
 /*Tacos y Pupusas*/
 .food-trucks-test img[src*="download-removebg-preview%20(2).png"] {
-  max-width: 80px;
-  max-height: 80px;
+  max-width: 11rem;
+  max-height: 11rem;
 }
+
+/*Basarvdogim on Wheels*/
+.food-trucks-test img[src*="https://cdn.glitch.global/517fcbda-27d5-4a6f-a83b-4e7f1dd0ed2e/download-removebg-preview%20(6).png?v=1745168499595"] {
+  max-width: 11rem;
+  max-height: 11rem;
+}
+
+
 
 
 .food-truck-details {
@@ -731,22 +739,23 @@ body {
 }
 
 .about-content h1 {
-  font-size: 50px;
+  font-size: 70px;
   margin-bottom: 30px;
   color: #f3bd48;
   text-align: center;
 }
 
 .about-content p {
+  text-align: center;
   font-family: "National Park", sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.6;
   margin-bottom: 25px;
   color: #fff;
 }
 
 .about-us-image {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
