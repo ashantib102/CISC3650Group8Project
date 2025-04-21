@@ -366,7 +366,7 @@ export function FoodTruckInfoPage() {
           </div>
           <div className="food-truck-details">
             <h3>Jiannetto's Pizza ($)</h3>
-            <p>Serving an award-winning Grandma Thin-Crust Sicilian Pie and are recognized as one of the best offered in New York!</p>
+            <p>Home of the award-winning Grandma Thin-Crust Sicilian Pie — proudly recognized as one of the best in New York!</p>
           </div>
         </div>
 
