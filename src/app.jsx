@@ -437,23 +437,24 @@ export function FoodTruckInfoPage() {
 //  Schedule Page Component
 //
 export function SchedulePage() {
-    function getCurrentWeekDisplay() {
-    // Get current date
-    const today = new Date()
-    const dayOfWeek = today.getDay()
-    const monday = new Date(today)
-    
-    if (dayOfWeek === 0 || dayOfWeek === 6) {
-      const daysUntilNextMonday = dayOfWeek === 0 ? 1 : 8 - dayOfWeek
-       monday.setDate(today.getDate() + daysUntilNextMonday)
-    } else {
-      const diff = 1 - dayOfWeek
-      monday.setDate(today.getDate() + diff)
-    }
+  const [weekOffset, setWeekOffset] = useState(0)
+  
+    function getWeekDisplay(offset) {
+     const today = new Date()
+    const currentDayOfWeek = today.getDay() // 0 is Sunday, 1 is Monday, etc.
 
-    // Find Friday of current week
-    const friday = new Date(monday)
-    friday.setDate(monday.getDate() + 4)
+    // Find the reference Monday (this week's Monday)
+    const thisMonday = new Date(today)
+    const diff = currentDayOfWeek === 0 ? -6 : 1 - currentDayOfWeek
+    thisMonday.setDate(today.getDate() + diff)
+
+    // Apply the week offset
+    const targetMonday = new Date(thisMonday)
+    targetMonday.setDate(thisMonday.getDate() + offset * 7)
+
+    // Find Friday of that week
+    const targetFriday = new Date(targetMonday)
+    targetFriday.setDate(targetMonday.getDate() + 4)
 
     // Format the month and dates
     const monthNames = [
@@ -470,10 +471,28 @@ export function SchedulePage() {
       "November",
       "December",
     ]
-    const month = monthNames[monday.getMonth()]
 
-    // Create the display string
-    return `${month}, ${monday.getDate()} - ${friday.getDate()}`
+    // Handle case where Monday and Friday might be in different months
+    if (targetMonday.getMonth() === targetFriday.getMonth()) {
+      const month = monthNames[targetMonday.getMonth()]
+      return `${month}, ${targetMonday.getDate()} - ${targetFriday.getDate()}`
+    } else {
+      const mondayMonth = monthNames[targetMonday.getMonth()]
+      const fridayMonth = monthNames[targetFriday.getMonth()]
+      return `${mondayMonth} ${targetMonday.getDate()} - ${fridayMonth} ${targetFriday.getDate()}`
+    }
+  }
+    
+  const goToPreviousWeek = () => {
+    setWeekOffset((prevOffset) => prevOffset - 1)
+  }
+
+  const goToNextWeek = () => {
+    setWeekOffset((prevOffset) => prevOffset + 1)
+  }
+
+  const goToCurrentWeek = () => {
+    setWeekOffset(0)
   }
   
   return (
@@ -481,7 +500,14 @@ export function SchedulePage() {
       <Header />
       
       <div className="schedule-container">
-        <div className="schedule-title">{getCurrentWeekDisplay()}</div>
+        <button onClick={goToPreviousWeek}>← Previous Week</button>
+        <div className="schedule-title">{getWeekDisplay(weekOffset)}</div>
+        <button onClick={goToNextWeek}>Next Week →</button>
+        {weekOffset !== 0 && (
+          <button onClick={goToCurrentWeek} className="current-week-button">
+            Return to Current Week
+          </button>
+        )}
         <div className="schedule-table">
           <div className="schedule-header">
             <div className="day">Monday</div>
