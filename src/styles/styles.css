@@ -304,11 +304,13 @@ body {
 }
 
 /* Custom icon sizes */
+/*Jiannetto's Pizza*/
 .food-truck img[src*="Jiannetto_sPizzaLogo-removebg-preview.png"] {
-  max-width: 75px;
-  max-height: 75px;
+  max-width: 85px;
+  max-height: 85px;
 }
 
+/*Jiannetto's Pizza*/
 .food-truck img[src*="download-removebg-preview.png"] {
   max-width: 40px;
   max-height: 40px;
