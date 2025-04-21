@@ -498,8 +498,8 @@ export function SchedulePage() {
   return (
     <div className="bc-bites-container">
       <Header />
-      
       <div className="schedule-container">
+        <div className="schedule-head">
         <button onClick={goToPreviousWeek}>← Previous Week</button>
         <div className="schedule-title">{getWeekDisplay(weekOffset)}</div>
         <button onClick={goToNextWeek}>Next Week →</button>
@@ -508,6 +508,7 @@ export function SchedulePage() {
             Return to Current Week
           </button>
         )}
+        </div>
         <div className="schedule-table">
           <div className="schedule-header">
             <div className="day">Monday</div>

@@ -563,19 +563,25 @@ body {
   margin: 0 auto;
 }
 
+.schedule-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+.schedule-title {
+  text-align: center;
+  font-size: 70px;
+}
+
 .schedule-table {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.schedule-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 70px;
 }
 
 .schedule-header {
