@@ -505,7 +505,7 @@ export function SchedulePage() {
   const [resetKey, setResetKey] = useState(0)
   
   const resetComponent = () => {
-    setResetKey((prevKey) => prevKey + 1)
+    setResetKey((resetKey) => resetKey + 1)
   }
 
   function getWeekDisplay(offset) {
@@ -553,11 +553,11 @@ export function SchedulePage() {
     randomizeTruckSchedules();
   };
 
-  // location.reload() usage here is bad, need to find a better way to restore original content
   const goToNextWeek = () => {
     setWeekOffset((prevOffset) => prevOffset + 1);
-    if (weekOffset == 0) resetComponent();
-    else randomizeTruckSchedules();
+    if (weekOffset == -1){ resetComponent() }
+    else { randomizeTruckSchedules() }
+    console.log(weekOffset)
   };
 
   const goToCurrentWeek = () => {
