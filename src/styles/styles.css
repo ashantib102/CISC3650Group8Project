@@ -328,11 +328,13 @@ body {
   max-height: 75px;
 }
 
+/*Wafels and Dingles*/
 .food-truck img[src*="download-removebg-preview%20(5).png"] {
-  max-width: 6px;
+  max-width: 60px;
   max-height: 60px;
 }
 
+/*Tacos y Pupusas*/
 .food-truck img[src*="download-removebg-preview%20(2).png"] {
   max-width: 60px;
   max-height: 60px;
@@ -475,7 +477,8 @@ body {
   transform: translateY(-5px);
 }
 
-.food-truck-icon {
+
+.food-trucks-test {
   width: 80px;
   height: 80px;
   display: flex;
@@ -483,11 +486,50 @@ body {
   justify-content: center;
 }
 
-.food-truck-icon img {
+
+.food-trucks-test img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
+
+/* Custom icon sizes */
+/*Jiannetto's Pizza*/
+.food-trucks-test img[src*="Jiannetto_sPizzaLogo-removebg-preview.png"] {
+  max-width: 120px;
+  max-height: 120px;
+}
+
+/*Sammy's Halal*/
+.food-trucks-test img[src*="https://cdn.glitch.global/517fcbda-27d5-4a6f-a83b-4e7f1dd0ed2e/download-removebg-preview.png?v=1745168473732"] {
+  max-width: 60px;
+  max-height: 60px;
+}
+
+/*BK Jerk Mobile*/
+.food-trucks-test img[src*="images-removebg-preview.png"] {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+/*San Mateo Coffee*/
+.food-trucks-test img[src*="download-removebg-preview%20(4).png"] {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+/*Wafels and Dingles*/
+.food-trucks-test img[src*="download-removebg-preview%20(5).png"] {
+  max-width: 80px;
+  max-height: 80px;
+}
+
+/*Tacos y Pupusas*/
+.food-trucks-test img[src*="download-removebg-preview%20(2).png"] {
+  max-width: 80px;
+  max-height: 80px;
+}
+
 
 .food-truck-details {
   flex: 1;
