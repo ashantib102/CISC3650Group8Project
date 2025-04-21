@@ -572,6 +572,10 @@ body {
   margin-bottom: 20px;
   position: relative;
 }
+.schedule-disclaimer { 
+  text-align: center;
+  font-size: 15px;
+}
 .schedule-title {
   text-align: center;
   font-size: 70px;

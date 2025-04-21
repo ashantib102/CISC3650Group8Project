@@ -596,6 +596,9 @@ export function SchedulePage() {
     <div className="bc-bites-container">
       <Header />
       <div className="schedule-title">{getWeekDisplay(weekOffset)}</div>
+          {weekOffset != 0 && (
+            <p1 className="schedule-disclaimer">Not real schedule, randomized demonstration purposes</p1>
+          )}
       <div className="schedule-container">
         <div className="schedule-head">
           <button onClick={goToPreviousWeek}>← Previous Week</button>
