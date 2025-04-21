@@ -87,26 +87,25 @@ const options = {
   streetViewControl: false, // For a prettier view
   fullscreenControl: true,
   mapTypeId: 'satellite',
-  restriction: {
-    // Boundaries for Brookyln College
+ restriction: {
     latLngBounds: {
-      north: 40.632710,
-      south: 40.6290,
+      north: 40.63271,
+      south: 40.629,
       east: -73.946434,
-      west: -73.956836
+      west: -73.956836,
     },
-    strictBounds: true
+    strictBounds: true,
   },
   minZoom: 16,
-  maxZoom: 20,
+  maxZoom: 24,
   styles: [
     {
       featureType: "all",
       elementType: "labels.text.fill",
-      stylers: [{ color: "#7e2626" }]
-    }
-  ]
-};
+      stylers: [{ color: "#7e2626" }],
+    },
+  ],
+}
 
 // Interactive Map Component
 // https://visgl.github.io/react-google-maps/docs/get-started
