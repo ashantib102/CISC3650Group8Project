@@ -484,13 +484,16 @@ export function SchedulePage() {
     randomizeTruckSchedules()
   }
 
+  // location.reload() usage here is bad, need to find a better way to restore original content
   const goToNextWeek = () => {
     setWeekOffset((prevOffset) => prevOffset + 1)
-    randomizeTruckSchedules()
+    if(weekOffset == 0) location.reload()
+    else randomizeTruckSchedules()
   }
 
   const goToCurrentWeek = () => {
     setWeekOffset(0)
+    location.reload()
   }
     
   // Simulation of viewing previous week food truck
