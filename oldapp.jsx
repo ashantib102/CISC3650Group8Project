@@ -3,6 +3,12 @@ import { Router, Link, useLocation } from "wouter";
 import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 
 /**
+LoadScript loads the Google Maps JavaScript library. 
+GoogleMap displays the map. 
+Marker shows a marker with custom icon.
+InfoWindow can pop up with extra info when a marker is clicked.
+
+
 * This code defines the react app
 *
 * Imports the router functionality to provide page navigation
