@@ -1,5 +1,4 @@
 Project Structure- The app.jsx and styles.css files contain all of the code that shows up on our website.
-## Project Structure
 
 - **src/** - Source code
 
@@ -9,10 +8,12 @@ Project Structure- The app.jsx and styles.css files contain all of the code that
 - `seo.jsx` - SEO component for metadata
 
 
+
 - **hooks/** - Custom React hooks
 
 - `prefers-reduced-motion.jsx` - Accessibility hook
 - `wiggle.jsx` - Animation hook
+
 
 
 - **styles/** - CSS stylesheets
@@ -20,9 +21,11 @@ Project Structure- The app.jsx and styles.css files contain all of the code that
 - `styles.css` - Main stylesheet
 
 
+
 - `app.jsx` - Main application component
 - `index.jsx` - Entry point
 - `seo.json` - SEO configuration
+
 
 
 - `.gitignore` - Git ignore file
