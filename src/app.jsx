@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Router, Link, useLocation } from "wouter";
-import {
-  GoogleMap,
-  LoadScript,
-  Marker,
-  InfoWindow,
-} from "@react-google-maps/api";
+import {GoogleMap,LoadScript,Marker, InfoWindow,} from "@react-google-maps/api";
 
 /**
  * This code defines the react app
@@ -21,6 +16,7 @@ import Seo from "./components/seo.jsx";
 
 // Food truck location & data
 // Coordinates were obtained from google maps
+
 const foodTruckLocations = [
   {
     id: 1,
@@ -73,6 +69,8 @@ const foodTruckLocations = [
 ];
 
 // Map container style
+//Google Maps API documentation: https://developers.google.com/maps/documentation/javascript/overview
+
 const mapContainerStyle = {
   width: "100%",
   height: "600px",
@@ -115,7 +113,8 @@ const options = {
 
 // Interactive Map Component
 // https://visgl.github.io/react-google-maps/docs/get-started
-//
+//Adding markers to google map: https://developers.google.com/maps/documentation/javascript/advanced-markers/overview
+
 function InteractiveMap() {
   const [selectedTruck, setSelectedTruck] = useState(null);
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -124,6 +123,7 @@ function InteractiveMap() {
     <div className="campus-map-container">
       <LoadScript
         googleMapsApiKey="AIzaSyCN9j0hnEkwtMH619ZRKDAa6MabcSTbLGY"
+        
         onLoad={() => setMapLoaded(true)}
       >
         <GoogleMap
@@ -201,7 +201,8 @@ function InteractiveMap() {
   );
 }
 
-// Header component for all pages
+// Header component for all pages. It creates navigation links that don't require a full page reload when clicked.
+//How to use React components: https://react.dev/learn/your-first-component
 function Header() {
   return (
     <header className="bc-header">
@@ -235,6 +236,7 @@ function Header() {
 }
 
 // BC Bites Home Page Component
+// How React components are composed together: https://react.dev/learn/passing-props-to-a-component
 export function HomePage() {
   const [useInteractiveMap, setUseInteractiveMap] = useState(false);
 
@@ -496,9 +498,8 @@ export function FoodTruckInfoPage() {
   );
 }
 
-//
+
 //  Schedule Page Component
-//
 export function SchedulePage() {
   const [weekOffset, setWeekOffset] = useState(0)
   ;
@@ -863,19 +864,14 @@ export function AboutPage() {
       <div className="about-content">
         <h1>About BC Bites</h1>
         <p>
-          We are a group of Brooklyn College students
-          who got frustrated with the messy and hard-to-find food truck
-          schedules buried in endless emails.  It was difficult to know when and
-          where we could grab our favorite meals. Since there was no simple and
-          dependable way to find this information, we decided
-          to solve the problem ourselves. That's why we created this website.
-          It's a straightforward and quick solution made by students just like
-          us to keep everyone informed without the hassle of numerous emails.
+          We are a group of Brooklyn College students who noticed the challenge of finding food truck schedules 
+          amidst numerous emails. It was often difficult to know when and where we could grab our favorite meals. 
+          Since there was no simple way to access this information, we decided to create a solution ourselves. 
+          That's why we developed this website. It's a straightforward and quick tool to keep everyone informed 
+          without the hassle of multiple emails. With this site, there will be no more guessing and no more 
+          missed lunches—just delicious food, always on time.
         </p>
-        <p>
-          With this site, there will be no more guessing and no more missed
-          lunches—just  delicious food, always on time.
-        </p>
+        
         <img
           className="about-us-image"
           src="https://cdn.glitch.global/517fcbda-27d5-4a6f-a83b-4e7f1dd0ed2e/11-CUNYverse-12-min.png?v=1745173825425"
@@ -896,8 +892,6 @@ export default function Home() {
           <PageRouter />
         </div>
       </main>
-      {/* Footer with Glitch remix button only */}
-      <footer className="footer"></footer>
     </Router>
   );
 }
