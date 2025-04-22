@@ -1,11 +1,10 @@
-/* Base styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Font settings */
+/* Font Styles */
 .irish-grover-regular {
   font-family: "Irish Grover", system-ui;
   font-weight: 400;
@@ -25,8 +24,15 @@
   font-style: normal;
 }
 
+.winky-rough-200 {
+  font-family: "Winky Rough", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
 body {
-  font-family: "Irish Grover", Roboto, sans-serif;
+  font-family: "Irish Grover", "Winky Rough", Roboto, sans-serif;
   background-image: url("https://cdn.glitch.global/517fcbda-27d5-4a6f-a83b-4e7f1dd0ed2e/BCBitesWebsiteBackground.png?v=1745162252980");
   background-size: cover;
   background-position: center;
@@ -113,40 +119,51 @@ body {
 }
 
 /* Navigation */
+/* Navigation */
 .bc-nav {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  gap: 20px;
+  /* More aggressive fluid gap scaling */
+  gap: clamp(10px, 1.5vw, 45px);
   width: 100%;
-  padding-right: 10px;
+  padding-right: clamp(5px, 1vw, 10px);
 }
 
 @media (min-width: 768px) {
   .bc-nav {
-    gap: 30px;
     justify-content: flex-end;
     width: auto;
-    margin-right: 30px;
-  }
-}
-
-@media (min-width: 992px) {
-  .bc-nav {
-    gap: 45px;
-    margin-right: 50px;
+    /* Fluid margin that's smaller in the problematic range */
+    margin-right: clamp(10px, 2vw, 50px);
   }
 }
 
 .nav-link {
   color: #f3bd48;
   text-decoration: none;
-  font-size: 22px;
+  /* More conservative font scaling to prevent overflow */
+  font-size: clamp(16px, 1.2vw + 7px, 26px);
   font-weight: bold;
   transition: all 0.3s ease;
-  padding: 5px 8px;
+  /* Smaller padding in the problematic range */
+  padding: clamp(2px, 0.3vw + 2px, 10px);
   white-space: nowrap;
   position: relative;
+}
+
+/* Special adjustment for the problematic range */
+@media (min-width: 765px) and (max-width: 1200px) {
+  .bc-nav {
+    /* Tighter spacing in this specific range */
+    gap: clamp(5px, 0.8vw, 15px);
+  }
+  
+  .nav-link {
+    /* Smaller font in this specific range */
+    font-size: clamp(14px, 1vw + 6px, 20px);
+    padding: 3px 4px;
+  }
 }
 
 .nav-link::after {
@@ -169,19 +186,6 @@ body {
   width: 100%;
 }
 
-@media (min-width: 768px) {
-  .nav-link {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 992px) {
-  .nav-link {
-    font-size: 26px;
-    padding: 5px 10px;
-  }
-}
-
 /* Home page specific styles */
 .home-content {
   display: flex;
@@ -194,16 +198,17 @@ body {
 .top-section {
   display: flex;
   align-items: flex-start;
-  gap: 50px;
+  gap: clamp(20px, 3vw, 50px);
   justify-content: space-between;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 clamp(10px, 2vw, 20px);
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
 /* College logos */
 .college-logos {
   flex: 0 0 auto;
-  margin-left: 30px;
+  margin-left: clamp(10px, 2vw, 30px);
 }
 
 @media (min-width: 992px) {
@@ -213,9 +218,16 @@ body {
 }
 
 .college-logo {
-  width: 400px;
+  width: clamp(200px, 25vw, 400px); /* Smaller on medium screens */
   height: auto;
   transition: transform 0.3s ease;
+}
+
+/* Adjust logo size specifically for medium screens */
+@media (min-width: 765px) and (max-width: 1200px) {
+  .college-logo {
+    width: clamp(180px, 20vw, 250px);
+  }
 }
 
 .college-logo:hover {
@@ -226,20 +238,43 @@ body {
 .quad-sections {
   display: flex;
   flex: 1;
-  gap: 70px;
+  gap: clamp(10px, 2vw, 70px);
   justify-content: flex-end;
-  margin-right: 30px;
+  margin-right: clamp(10px, 2vw, 50px);
+  flex-wrap: nowrap; /* Keep on one line */
+}
+
+/* Medium screen specific adjustments */
+@media (min-width: 765px) and (max-width: 1200px) {
+  .quad-sections {
+    gap: 10px; /* Minimal gap on medium screens */
+  }
 }
 
 @media (min-width: 992px) {
   .quad-sections {
     margin-right: 50px;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .quad-sections {
+    gap: 70px;
   }
 }
 
 /* Individual quad section */
 .quad-section {
   flex: 1;
+  min-width: 0; /* Allow sections to shrink below content size */
+}
+
+/* Medium screen specific adjustments for quad sections */
+@media (min-width: 765px) and (max-width: 1200px) {
+  .quad-section {
+    flex: 1;
+  }
 }
 
 /* Make East Quad section wider */
@@ -247,14 +282,26 @@ body {
   flex: 2;
 }
 
+/* Medium screen specific adjustments for east quad */
+@media (min-width: 765px) and (max-width: 1200px) {
+  .east-quad {
+    flex: 1.5; /* Still slightly wider but not as much */
+  }
+}
+
 .quad-title {
   text-align: center;
-  font-size: 28px;
+  font-size: clamp(20px, 1.8vw, 28px); /* Smaller font on medium screens */
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: clamp(5px, 1.5vw, 20px);
   color: #f3bd48;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap; /* Prevent title from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis if text is too long */
 }
+
+
 
 /* Food trucks list */
 .food-trucks {
@@ -312,8 +359,8 @@ body {
 
 /*Sammy's Halal*/
 .food-truck img[src*="download-removebg-preview.png"] {
-  max-width: 60px;
-  max-height: 50px;
+  width: 60px;
+ height: 50px;
 }
 
 /*BK Jerk Mobile*/
@@ -550,7 +597,7 @@ body {
 }
 
 .food-truck-details p {
-  font-family: "National Park", sans-serif;
+  font-family: "Winky Rough", "Josefin Sans", "Roboto", sans-serif;
   font-size: 18px;
   line-height: 1.4;
   color: #fff;
@@ -767,7 +814,7 @@ body {
 }
 
 .about-content p {
-  font-family: "National Park", sans-serif;
+  font-family: "Winky Rough", "Josefin Sans", "Roboto", sans-serif;
   font-size: 1.5rem; /* Changed from 24px to 1.5rem for better responsiveness */
   line-height: 1.6;
   margin-bottom: 1.563rem; /* Changed from 25px to 1.563rem */
@@ -1000,4 +1047,3 @@ button:active {
  
   
 }
-
