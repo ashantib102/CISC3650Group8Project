@@ -1,3 +1,20 @@
+BC Bites is a 5-page interactive website aimed at streamlining access to food truck schedules, prices, and locations on Brooklyn College's campus. It's goal is to help students, faculty, and visitors efficiently plan meals on campus with a clear, accessible interface.
+
+While the site does not feature a working backend, it uses front-end logic to simulate real-time data, including dynamic food truck locations and weekly schedules. 
+
+My team of 4 followed a comprehensive UCD approach throughout the development process:
+Conducted needfinding interviews to identify key user pain points
+Created personas and scenarios to shape our design vision
+Developed wireframes for various page layouts
+Built a high-fidelity prototype using Figma, tailored with Brooklyn College branding and color schemes
+
+Tech Stack:
+Built with React and Vite for fast, modern front-end development
+Integrated the Google Maps API to visually display food truck locations via campus-specific markers
+Deployed using GitHub Pages
+
+Figma Prototype: https://www.figma.com/proto/cIuXly9zvDOMed86OoG7to/CISC3610-Group-Project?node-id=64-2&p=f&t=WZ6qcJYIBazaxOWr-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=64%3A2
+
 Project Structure- The app.jsx and styles.css files contain all of the code that shows up on our website.
 
 Our project follows a standard React application structure. The main source code is located in the "src" directory. Within this directory, we have organized our code into several subdirectories for better maintainability.
